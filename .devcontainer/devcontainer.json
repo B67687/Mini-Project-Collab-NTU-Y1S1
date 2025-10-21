@@ -1,0 +1,28 @@
+{
+  "name": "My Codespace",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.14"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "formulahendry.code-runner",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "mechatroner.rainbow-csv",
+        "PKief.material-icon-theme",
+        "DavidAnson.vscode-markdownlint"
+      ],
+      "settings": {
+        "python.formatting.provider": "black",
+        "editor.formatOnSave": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && pre-commit install"
+
+}
